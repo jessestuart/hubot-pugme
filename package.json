@@ -9,23 +9,28 @@
     "type": "git",
     "url": "git@github.com:jessestuart/txbot-pugme.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "snyk": "^1.68.1"
+  },
   "peerDependencies": {
     "hubot": "2.x"
   },
   "devDependencies": {
     "chai": "*",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-mocha-test": "~0.7.0",
-    "grunt-release": "~0.6.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-mocha-test": "~0.12.0",
+    "grunt-release": "~0.9.0",
     "hubot": "2.x",
-    "matchdep": "~0.1.2",
+    "matchdep": "~0.3.0",
     "mocha": "*",
     "sinon": "*",
     "sinon-chai": "*"
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "grunt test"
-  }
+    "test": "grunt test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
