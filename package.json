@@ -9,7 +9,9 @@
     "type": "git",
     "url": "git@github.com:jessestuart/txbot-pugme.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "snyk": "^1.189.0"
+  },
   "peerDependencies": {
     "hubot": "2.x"
   },
@@ -26,6 +28,9 @@
   },
   "main": "index.coffee",
   "scripts": {
-    "test": "grunt test"
-  }
+    "test": "grunt test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
